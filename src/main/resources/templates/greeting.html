@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HELLO</title>
+    <title>Greeting</title>
 </head>
 <body>
-    <H1>HELLO JAVA</H1>
+    <H1>Greeting</H1>
+    <li th:each="name: ${names}" td th:text="${name}"></li>
 </body>
 </html>
