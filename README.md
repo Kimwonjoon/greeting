@@ -1,5 +1,5 @@
 # Getting Started
-
+## v0.1
 ### Bash
 ```bash
 $ ./gradlew :bootrun
