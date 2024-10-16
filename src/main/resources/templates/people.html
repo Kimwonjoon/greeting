@@ -6,12 +6,12 @@
     <title>GREETING</title>
 </head>
 <body>
-    <H1>이전에 입력한 이름들</H1>
+    <H1>이전에 입력한 성씨들</H1>
     <ul>
         <!-- nns 스택을 person이라는 이름으로 불러옴 -->
         <li th:each="person : ${nns}">
             <!-- person 배열에는 .num, .name 이런식으로 저장이 되어 있기 때문에 같은 방식으로 부르면 됨 -->
-            <span th:text="${person.num}"></span>: 
+            <span th:text="${person.num}"></span>번 : 
             <!-- 문자의 첫글자를 대문자로 -->
             <span th:text="${#strings.capitalize(person.name)}"></span>
         </li>
