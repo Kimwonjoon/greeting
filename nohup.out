@@ -1,0 +1,43 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2024-10-16T17:49:32.235+09:00  INFO 280174 --- [greeting] [           main] s.samdul.greeting.GreetingApplication    : Starting GreetingApplication v0.0.1-SNAPSHOT using Java 17.0.12 with PID 280174 (/home/kimpass189/code/java/greeting/build/libs/greeting-0.0.1-SNAPSHOT.jar started by kimpass189 in /home/kimpass189/code/java/greeting)
+2024-10-16T17:49:32.237+09:00  INFO 280174 --- [greeting] [           main] s.samdul.greeting.GreetingApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T17:49:33.106+09:00  INFO 280174 --- [greeting] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-16T17:49:33.119+09:00  INFO 280174 --- [greeting] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-16T17:49:33.120+09:00  INFO 280174 --- [greeting] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-16T17:49:33.158+09:00  INFO 280174 --- [greeting] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-16T17:49:33.159+09:00  INFO 280174 --- [greeting] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 867 ms
+2024-10-16T17:49:33.237+09:00  INFO 280174 --- [greeting] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-16T17:49:33.469+09:00  INFO 280174 --- [greeting] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-16T17:49:33.497+09:00  INFO 280174 --- [greeting] [           main] s.samdul.greeting.GreetingApplication    : Started GreetingApplication in 1.597 seconds (process running for 2.03)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2024-10-16T17:59:09.687+09:00  INFO 285801 --- [greeting] [           main] s.samdul.greeting.GreetingApplication    : Starting GreetingApplication v0.0.1-SNAPSHOT using Java 17.0.12 with PID 285801 (/home/kimpass189/code/java/greeting/build/libs/greeting-0.0.1-SNAPSHOT.jar started by kimpass189 in /home/kimpass189/code/java/greeting)
+2024-10-16T17:59:09.689+09:00  INFO 285801 --- [greeting] [           main] s.samdul.greeting.GreetingApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T17:59:10.555+09:00  INFO 285801 --- [greeting] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-16T17:59:10.568+09:00  INFO 285801 --- [greeting] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-16T17:59:10.569+09:00  INFO 285801 --- [greeting] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-16T17:59:10.616+09:00  INFO 285801 --- [greeting] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-16T17:59:10.617+09:00  INFO 285801 --- [greeting] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 872 ms
+2024-10-16T17:59:10.723+09:00  INFO 285801 --- [greeting] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-16T17:59:10.992+09:00  INFO 285801 --- [greeting] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-16T17:59:11.005+09:00  INFO 285801 --- [greeting] [           main] s.samdul.greeting.GreetingApplication    : Started GreetingApplication in 1.667 seconds (process running for 2.042)
+2024-10-16T17:59:11.531+09:00  INFO 285801 --- [greeting] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-16T17:59:11.532+09:00  INFO 285801 --- [greeting] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-16T17:59:11.533+09:00  INFO 285801 --- [greeting] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
