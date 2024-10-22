@@ -1,0 +1,27 @@
+services:
+
+  database:
+    image: mariadb
+    container_name: todo-mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_USER: todo_user
+      MARIADB_PASSWORD: todo_passwd
+      MARIADB_DATABASE: encore
+    volumes:
+      - ./src/main/resources/db_config/initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - 6033:3306
+
+
+  adminer:
+    container_name: todo-app
+    build: .
+    restart: always
+    ports:
+      - 8888:8080
+    depends_on:
+      - database
+    links:
+      - database
+    platform: linux/amd64
