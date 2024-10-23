@@ -7,22 +7,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import shop.samdul.greeting.service.TodoJpaService;
 import shop.samdul.greeting.service.TodoService;
 import shop.samdul.greeting.entity.TodoEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/jpatodos")
 public class TodoJpaController{
 
-    private final TodoJpaService todojpaService;
+    private final TodoJpaService todoJpaService;
 
     @Autowired
     public TodoJpaController(TodoJpaService todoJpaService) {
-        this.todojpaService = todoJpaService;
+        this.todoJpaService = todoJpaService;
     }
 
     @GetMapping
@@ -32,8 +35,12 @@ public class TodoJpaController{
 
     @GetMapping("/{id}")
     public TodoEntity find(@PathVariable Integer id) {
-        TodoEntity r = todoJpaService.getTodoById(id);
-        return r;
+        Optional<TodoEntity> optionalTodo = todoJpaService.getTodoById(id);
+        if (optionalTodo.isPresent()) {
+            return optionalTodo.get();
+        } else {
+            throw new IllegalArgumentException("Todo with id " + id + " not found");
+        }
     }
 
     //C - INSERT
