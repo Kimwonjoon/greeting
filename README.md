@@ -1,26 +1,49 @@
 # Getting Started
-## v0.2 ~ ing
-spring - mariaDB link
-### Bash Run
+
+### Jenkins
+- http://localhost:8080
+
+### Run
 ```bash
-$ ./gradlew :bootrun
+$ ./gradlew bootRun
 ```
+
 ```bash
-$ ./gradlew build
+$ ./gradlew [build|bootJar]
 $ java -jar build/libs/greeting-0.0.1-SNAPSHOT.jar
 ```
+
 ### Docker
 ```bash
-$ docker build -t kimpass189/greeting:temurin .
-$ docker run -d --name temurin -p 8080:8080 kimpass189/greeting:temurin
+$ docker build -t datamario24/greeting:temurin .
+$ docker run -d --name temurin -p 8080:8080 datamario24/greeting:temurin
 ```
+
 ### Docker compose
 ```bash
 $ docker compose up -d --force-recreate --build
 $ docker compose stop
 $ docker compose start
 $ docker compose ls
-$ docker compose down
+$ docker compose  down
+```
+
+### API
+```bash
+# docker
+$ curl -X GET http://localhost:8888/todos
+
+# java -jar
+$ curl -X GET http://localhost:8972/todos
+
+# 데이터 삽입
+$ curl -X POST -H "Content-Type:application/json" -d '{"subject":"test0", "body":"test0", "completed":0}' http://localhost:8972/todos
+
+# 데이터 수정
+$ curl -X PUT -H "Content-Type:application/json" -d '{"subject":"test4", "body":"test4", "completed":0}' http://localhost:8972/todos/{id}
+
+# 해당 데이터 삭제
+$ curl -X DELETE http://localhost:8972/todos/{id}
 ```
 
 ### Reference Documentation

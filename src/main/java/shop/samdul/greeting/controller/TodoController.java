@@ -1,8 +1,12 @@
 package shop.samdul.greeting.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import shop.samdul.greeting.service.TodoService;
@@ -19,7 +23,7 @@ public class TodoController{
     @GetMapping("/todos")
     public List<TodoEntity> list() {
         System.out.println("[Controller]");
-        java.util.List<TodoEntity> r = todoService.getTodos();
+        List<TodoEntity> r = todoService.getTodos();
         return r;
     }
 
@@ -29,9 +33,21 @@ public class TodoController{
         return r;
     }
 
-    //C
+    //C - INSERT
+    @PostMapping("/todos")
+    public void createTodo(@RequestBody TodoEntity todoEntity) {
+        todoService.createTodo(todoEntity);
+    }
 
-    //U
+    //U - UPDATE
+    @PutMapping("/todos/{id}")
+    public void updateTodo(@PathVariable Integer id, @RequestBody TodoEntity todoEntity) {
+        todoService.updateTodoById(id, todoEntity);
+    }
 
-    //D
+    //D - DELTE
+    @DeleteMapping("/todos/{id}")
+    public void updateTodo(@PathVariable Integer id) {
+        todoService.deleteTodoById(id);
+    }
 }

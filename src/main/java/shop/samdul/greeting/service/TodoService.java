@@ -24,4 +24,18 @@ public class TodoService {
     public TodoEntity findById(Integer id) {
         return todoMapper.findById(id);
     }
+
+    public void createTodo(TodoEntity todoEntity) {
+        todoMapper.insertTodo(todoEntity.getSubject(), todoEntity.getBody(), todoEntity.getCompleted());
+    }
+
+    public void updateTodoById(Integer id, TodoEntity todoEntity) {
+        todoEntity.setId(id);
+        todoMapper.updateTodoById(todoEntity);
+    }
+
+    public void deleteTodoById(Integer id) {
+        todoMapper.deleteTodoById(id);
+    }
+
 }
