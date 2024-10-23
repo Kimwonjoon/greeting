@@ -1,5 +1,6 @@
 # Getting Started
-## v0.1
+## v0.2 ~ ing
+spring - mariaDB link
 ### Bash
 ```bash
 $ ./gradlew :bootrun
