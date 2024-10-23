@@ -7,35 +7,43 @@ import shop.samdul.greeting.entity.TodoEntity;
 import shop.samdul.greeting.mapper.TodoMapper;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TodoJpaService {
+    private final TodoRepository todoRepository;
 
     @Autowired
-    TodoMapper todoMapper;
-
-    public List<TodoEntity> getTodos() {
-        System.out.println("[service] findAll");
-        List<TodoEntity> todos = todoMapper.findAll();
-        System.out.println("[todos]:" + todos.size());
-        return todos;
+    public TodoJpaService(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
     }
 
-    public TodoEntity findById(Integer id) {
-        return todoMapper.findById(id);
+    public List<TodoEntity> getAllTodos() {
+        return todoRepository.findAll();
     }
 
-    public void createTodo(TodoEntity todoEntity) {
-        todoMapper.insertTodo(todoEntity.getSubject(), todoEntity.getBody(), todoEntity.getCompleted());
+    public Optional<TodoEntity> getTodoById(Integer id) {
+        return todoRepository.findById(id);
+    }
+
+    public TodoEntity createTodo(TodoEntity todoEntity) {
+        return todoRepository.save(todoEntity);
     }
 
     public void updateTodoById(Integer id, TodoEntity todoEntity) {
-        todoEntity.setId(id);
-        todoMapper.updateTodoById(todoEntity);
+        Optional<TodoEntity> existingTodoOpt = todoRepository.findById(id);
+
+        if (existingTodoOpt.isPresent()) {
+            TodoEntity existingTodo = existingTodoOpt.get();
+            existingTodo.setSubject(todoEntity.getSubject());
+            existingTodo.setBody(todoEntity.getBody());
+            existingTodo.setCompleted(todoEntity.getCompleted());
+            return todoRepository.save(existingTodo);
+        }
     }
 
     public void deleteTodoById(Integer id) {
-        todoMapper.deleteTodoById(id);
+        todoRepository.deleteTodoById(id);
     }
 
 }
