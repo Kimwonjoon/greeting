@@ -3,15 +3,15 @@
 
 <mapper namespace="shop.samdul.greeting.mapper.TodoMapper">
     <select id="findAll" resultType="shop.samdul.greeting.entity.TodoEntity">
-        SELECT
-            id, subject, body, completed
+        SELECT *
+--             id, subject, body, completed
         FROM ENCORE_TODO_TBL
         ORDER BY id DESC
     </select>
 
     <select id="findById" parameterType="int" resultType="shop.samdul.greeting.entity.TodoEntity">
-        SELECT
-            id, subject, body, completed
+        SELECT *
+--             id, subject, body, completed
         FROM ENCORE_TODO_TBL
         WHERE id = #{id};
     </select>
