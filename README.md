@@ -1,13 +1,26 @@
 # Getting Started
 ## v0.2 ~ ing
 spring - mariaDB link
-### Bash
+### Bash Run
 ```bash
 $ ./gradlew :bootrun
 ```
 ```bash
 $ ./gradlew build
 $ java -jar build/libs/greeting-0.0.1-SNAPSHOT.jar
+```
+### Docker
+```bash
+$ docker build -t kimpass189/greeting:temurin .
+$ docker run -d --name temurin -p 8080:8080 kimpass189/greeting:temurin
+```
+### Docker compose
+```bash
+$ docker compose up -d --force-recreate --build
+$ docker compose stop
+$ docker compose start
+$ docker compose ls
+$ docker compose down
 ```
 
 ### Reference Documentation

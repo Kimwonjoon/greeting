@@ -1,7 +1,8 @@
 package shop.samdul.greeting.entity;
+
 import lombok.Setter;
-import lombok.Getter;
 import lombok.ToString;
+import lombok.Getter;
 
 @Setter
 @Getter

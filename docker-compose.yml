@@ -19,7 +19,7 @@ services:
     build: .
     restart: always
     ports:
-      - 8888:8080
+      - 8888:8972
     depends_on:
       - database
     links:
