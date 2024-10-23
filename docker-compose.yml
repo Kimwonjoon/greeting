@@ -25,3 +25,6 @@ services:
     links:
       - database
     platform: linux/amd64
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://database:3306/encore
+      # worker에 환경변수로 url을 줘야 연결이 원활하게 됨
